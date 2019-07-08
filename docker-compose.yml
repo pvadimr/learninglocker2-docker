@@ -80,15 +80,3 @@ services:
         volumes:
             - "${DATA_LOCATION}/app-storage:/opt/learninglocker/storage"
 
-    nginx:
-        image: michzimny/learninglocker2-nginx:${DOCKER_TAG}
-        environment:
-            - DOMAIN_NAME
-        restart: unless-stopped
-        depends_on:
-            - ui
-            - xapi
-        ports:
-            - "443:443"
-            - "80:80"
-
