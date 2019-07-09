@@ -14,15 +14,15 @@ upstream backend_xapi {
 }
 
 server {
-  listen       80 default_server;
-  listen       [::]:80 default_server;
+  listen       8888 default_server;
+  listen       [::]:8888 default_server;
   server_name  $DOMAIN_NAME;
   return 301 https://$DOMAIN_NAME${DOLLAR}request_uri;
 }
 
 server {
-  listen       443 ssl default_server;
-  listen       [::]:443 ssl default_server;
+  listen       4443 ssl default_server;
+  listen       [::]:4443 ssl default_server;
   server_name  $DOMAIN_NAME;
 
   access_log  /var/log/nginx/access.log;
