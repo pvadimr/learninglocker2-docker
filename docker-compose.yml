@@ -79,8 +79,8 @@ services:
             - redis
         volumes:
             - "${DATA_LOCATION}/app-storage:/opt/learninglocker/storage"
-            
-  nginx:
+    
+    nginx:
         image: michzimny/learninglocker2-nginx:${DOCKER_TAG}
         environment:
             - DOMAIN_NAME
