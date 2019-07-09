@@ -91,4 +91,7 @@ services:
         ports:
             - "4443:4443"
             - "8888:8888"
+        volumes:
+        - "/etc/letsencrypt/live/port.advance24.online/fullchain.pem:/root/ssl/fullchain.pem:ro"
+        - "/etc/letsencrypt/live/port.advance24.online/privkey.pem:/root/ssl/privkey.pem:ro"
 
