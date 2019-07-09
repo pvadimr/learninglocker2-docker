@@ -79,4 +79,16 @@ services:
             - redis
         volumes:
             - "${DATA_LOCATION}/app-storage:/opt/learninglocker/storage"
+            
+  nginx:
+        image: michzimny/learninglocker2-nginx:${DOCKER_TAG}
+        environment:
+            - DOMAIN_NAME
+        restart: unless-stopped
+        depends_on:
+            - ui
+            - xapi
+        ports:
+            - "4443:4443"
+            - "8888:8888"
 
